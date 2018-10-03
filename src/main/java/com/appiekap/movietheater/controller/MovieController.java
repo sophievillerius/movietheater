@@ -37,16 +37,16 @@ public class MovieController {
      */
     @RequestMapping(value = "all", method = RequestMethod.GET)
     public Iterable<Movie> getAllMovies() {
-        List<Movie> movies = new ArrayList<>();
-        Movie dummy = new Movie();
-        dummy.setId(1);
-        dummy.setTitle("Dummy movie");
-        dummy.setWatched(true);
-        movies.add(dummy);
-        return movies;
+//        List<Movie> movies = new ArrayList<>();
+//        Movie dummy = new Movie();
+//        dummy.setId(1);
+//        dummy.setTitle("Dummy movie");
+//        dummy.setWatched(true);
+//        movies.add(dummy);
+//        return movies;
 
         // TODO uncomment for production:
-        // return this.movieRepository.findAll();
+         return this.movieRepository.findAll();
     }
 
     /**
@@ -56,7 +56,7 @@ public class MovieController {
      */
     @RequestMapping(value = "title/{title}", method = RequestMethod.GET)
     public Iterable<Movie> getMovieByTitle(@PathVariable String title) {
-        List<Movie> movies = this.movieRepository.findByTitel(title);
+        List<Movie> movies = this.movieRepository.findByTitle(title);
         if(movies == null  || movies.size() == 0)
             throw new NotFoundException();
 
