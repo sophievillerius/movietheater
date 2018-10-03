@@ -47,12 +47,13 @@
                     title : title
                 }),
                 success: function(data) {
+                getMovies();
 
                  },
                 contentType: "application/json",
                 dataType: 'json'
             });
-            getMovies();
+
 
             $('[data-role=dialog]').dialog("close");
         }
@@ -115,7 +116,7 @@
         <label for="movieTitle">Movie Title</label>
         <input type="text" data-clear-btn="true" name="movieTitle" id="movieTitle" value="">
         <p><a onclick="saveMovie();" data-role="button" data-icon="save">Save Movie</a></p>
-        <p><a onclick="cancelMovies();" data-role="button" data-icon="back">Cancel</a></p>
+        <p><a onclick="cancelMovie();" data-role="button" data-icon="back">Cancel</a></p>
     </div><!-- /content -->
 
 </div><!-- /page popup -->

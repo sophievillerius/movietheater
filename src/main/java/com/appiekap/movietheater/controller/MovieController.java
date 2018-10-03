@@ -27,8 +27,9 @@ public class MovieController {
      * @param movie to be created.
      */
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public void createMovie(@RequestBody Movie movie) {
-        this.movieRepository.save(movie);
+    public Movie createMovie(@RequestBody Movie movie) {
+
+        return this.movieRepository.save(movie);
     }
 
     /**
